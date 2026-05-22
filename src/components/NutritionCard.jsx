@@ -57,7 +57,30 @@ function NutritionCard({ data, addToMeal }) {
                 <span>{getNutrient("Calcium") || "N/A"} mg</span>
             </div>
 
-            <button onClick={handleAdd}>
+            <button 
+                onClick={handleAdd}
+                style={{
+                    marginTop: "15px",
+                    padding: "10px 16px",
+                    borderRadius: "10px",
+                    border: "none",
+                    background: "#4CAF50",
+                    color: "white",
+                    fontWeight: "bold",
+                    fontSize: "14px",
+                    cursor: "pointer",
+                    boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
+                    transition: "all 0.2s ease"
+                }}
+                onMouseOver={(e) => {
+                    e.target.style.background = "#43a047";
+                    e.target.style.transform = "translateY(-1px)";
+                }}
+                onMouseOut={(e) => {
+                    e.target.style.background = "#4CAF50";
+                    e.target.style.transform = "translateY(0)";
+                }}
+            >
                 Add to Meal
             </button>
         </div>
