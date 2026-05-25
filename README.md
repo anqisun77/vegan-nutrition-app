@@ -1,16 +1,47 @@
-# React + Vite
+# 🌱 Plant-Based Nutrition Intelligence
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web app for looking up ingredient nutrition, building meals, and tracking total nutrients across a meal.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Search any ingredient and view its nutritional facts
+- Add ingredients to a meal builder
+- See total calories, protein, carbs, fat, iron, and calcium across the meal
+- Remove items from the meal
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React + Vite
+- Spoonacular API
+- JavaScript, CSS
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+git clone https://github.com/anqisun77/vegan-nutrition-app
+cd vegan-nutrition-app
+npm install
+```
+
+Create a `.env` file in the root with your Spoonacular API key:
+```
+VITE_API_KEY=your_key_here
+​```
+
+Then run:
+
+```bash
+npm run dev
+```
+
+## Roadmap
+
+- User goal profiles (e.g., runner, vegan bodybuilder, weight loss)
+- Personalized daily meal suggestions based on user goals
+- Saved meal history
+- Nutrition-target progress tracking
+
+## Why I Built This
+
+I'm a vegan and yoga studio manager learning to code with 14 months of self-teaching while running a busy studio. I feel the needs to supply my body with the right nutritional food to operate on my demanding schedule for both my body and mind. I wanted a tool that is actually helpful that I'd really use — one that helps health-conscious people, ie. runners, vegan bodybuilders and weight loss group understand what to eat to hit their fitness and wellness goals. 
+I'm spiritual and I believe in holisitc wellness in day to day lifestyle over any modalities to treat health issues. Your way of living comes first.
