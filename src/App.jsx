@@ -1,3 +1,4 @@
+import styles from './App.module.css';
 import { useState } from 'react';
 import SearchBar from './components/SearchBar';
 import NutritionCard from './components/NutritionCard';
@@ -64,36 +65,20 @@ function App() {
   }
 
   return (
-  <div style={{ 
-    background: "#fafafa",
-    minHeight: "100vh",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"
-  }}>
+  <div className={styles.page}>
 
-    <div style={{ 
-      padding: "40px 20px", 
-      fontFamily: "Arial, sans-serif",
-      maxWidth: "900px",
-      width: "100%"
-    }}>
+    <div className={styles.container}>
 
-    <h1 style={{ marginBottom: "10px", textAlign: "center" }}>
+    <h1 className={styles.title}>
       🌱 Plant-based Nutrition Intelligence
     </h1>
 
-    <p style={{ color: "#666", marginBottom: "30px" }}>
+    <p className={styles.subTitle}>
       Build smarter meals and track essential nutrients with ease.
     </p>
 
-  <div style={{
-    padding: "20px",
-    border: "1px solid #eee",
-    borderRadius: "12px",
-    marginBottom: "20px"
-  }}>
-    <h2 style={{ marginBottom: "10px" }}>Search Ingredient</h2>
+  <div className={styles.searchBox}>
+    <h2 className={styles.sctionHeading}>Search Ingredient</h2>
 
     <SearchBar
       ingredient={ingredient}
@@ -103,13 +88,7 @@ function App() {
   </div>
 
     {error && (
-      <p style={{
-        color: "#b00020",
-        background: "#ffeaea",
-        padding: "10px",
-        borderRadius: "8px",
-        marginTop: "10px"
-      }}>
+      <p className={styles.errorMessage}>
         ⚠️{error}
       </p>
     )}
@@ -119,35 +98,20 @@ function App() {
     )}
 
     {isLoading && (
-      <p style={{ textAlign: "center", marginTop: "20px" }}>
+      <p className={styles.loadingMessage}>
         Loading nutrition data...
       </p>
     )}
 
     {/* Total Nutrition */}
     {mealItems.length > 0 && (
-      <div style={{
-        marginTop: "30px",
-        padding: "20px",
-        borderRadius: "16px",
-        background: "#ffffff",
-        boxShadow: "0 6px 20px rgba(0,0,0,0.06)",
-        border: "1px solid #eee",
-        maxWidth: "300px",
-        width: "100%"
-      }}>
-        <h2 style={{ marginBottom: "20px" }}>
+      <div className={styles.totalBox}>
+        <h2 className={styles.sectionHeading}>
           🍽️ Total Meal Nutrition
         </h2>
 
         {/* Grid Starts Here */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "auto auto",
-          rowGap: "12px",
-          columnGap: "12px",
-          alignItems: "center"
-        }}>
+        <div className={styles.totalGrid}>
 
           <span>Calories</span> 
           <strong>{getTotalNutrient("Calories").toFixed(0)} kcal</strong>
@@ -173,14 +137,10 @@ function App() {
 
     {/* Meal Builder */}
     {mealItems.length > 0 && (
-      <div style={{ marginTop: "30px" }}>
-        <h2>Meal Builder</h2>
+      <div className={styles.mealBuilder}>
+        <h2 className={styles.sectionHeading}>Meal Builder</h2>
 
-      <div style={{
-        display: "flex",
-        flexWrap: "wrap",
-        gap: "20px"
-      }}>
+      <div className={styles.mealList}>
         {mealItems.map((item, index) => {
 
           function getNutrient(name) {
@@ -192,15 +152,7 @@ function App() {
           return (
             <div 
               key={index}
-              style={{ 
-                marginTop: "20px",
-                border: "1px solid #eee",
-                borderRadius: "16px",
-                padding: "20px",
-                maxWidth: "320px",
-                boxShadow: "0 6px 20px rgba(0,0,0,0.06)",
-                background: "#fff"
-              }}
+              className={styles.mealCard}
             >
               <h3>{item.name} (100g)</h3>
 
@@ -213,15 +165,7 @@ function App() {
 
               <button 
                 onClick={() => removeFromMeal(index)}
-                style={{ 
-                  marginTop: "10px",
-                  padding: "8px 12px",
-                  borderRadius: "8px",
-                  border: "none",
-                  background: "#ff4d4f",
-                  color: "white",
-                  cursor: "pointer"
-                }}
+                className={styles.removeButton}
               >
                 Remove
               </button>
