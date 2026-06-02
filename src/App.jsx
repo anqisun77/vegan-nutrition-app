@@ -1,3 +1,4 @@
+import { supabase } from './supabaseClient';
 import styles from './App.module.css';
 import { useState } from 'react';
 import SearchBar from './components/SearchBar';
@@ -105,7 +106,7 @@ function App() {
 
     {/* Total Nutrition */}
     {mealItems.length > 0 && (
-      <div className={styles.totalBox}>
+      <div className={styles.card}>
         <h2 className={styles.sectionHeading}>
           🍽️ Total Meal Nutrition
         </h2>
@@ -152,7 +153,7 @@ function App() {
           return (
             <div 
               key={index}
-              className={styles.mealCard}
+              className={styles.card}
             >
               <h3>{item.name} (100g)</h3>
 

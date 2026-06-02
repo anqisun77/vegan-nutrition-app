@@ -47,15 +47,14 @@
   margin-top: 20px;
 }
 
-.totalBox {
-  margin-top: 30px;
+.card {
+  margin-top: 20px;
   padding: 20px;
   border-radius: 16px;
   background: #ffffff;
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
   border: 1px solid #eee;
   max-width: 300px;
-  width: 100%;
 }
 
 .totalGrid {
@@ -74,16 +73,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-}
-
-.mealCard { 
-  margin-top: 20px;
-  border: 1px solid #eee;
-  border-radius: 16px;
-  padding: 20px;
-  max-width: 320px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-  background: #fff;
 }
 
 .removeButton { 
