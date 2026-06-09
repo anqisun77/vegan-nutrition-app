@@ -10,6 +10,9 @@ function App() {
   const [error, setError] = useState("");
   const [mealItems, setMealItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [accountError, setAccountError] = useState("");
 
   function addToMeal(item) {
     setMealItems(prev => [...prev, item]);
@@ -65,6 +68,22 @@ function App() {
     }
   }
 
+  async function handleSignUp() {
+    try {
+      const { data, error } = await supabase.auth.signUp({ email, password });
+
+      if (error) {
+        setAccountError(error.message);
+        return;
+      }
+
+      setAccountError("");
+
+    } catch (err) {
+      setAccountError("Something went wrong.");
+    }
+  }
+
   return (
   <div className={styles.page}>
 
@@ -77,6 +96,25 @@ function App() {
     <p className={styles.subTitle}>
       Build smarter meals and track essential nutrients with ease.
     </p>
+
+  <div>
+    <h2>Create Account</h2>
+    <input
+      value={email}
+      onChange={(e) => setEmail(e.target.value)}
+      placeholder="Enter Email"
+      type="email"
+    /> 
+    <input
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      placeholder="Enter Password"
+      type="password"
+    />
+    <button onClick={handleSignUp}>Sign Up</button>
+  </div>  
+
+    {accountError && <p className={styles.errorMessage}>{accountError}</p>}
 
   <div className={styles.searchBox}>
     <h2 className={styles.sctionHeading}>Search Ingredient</h2>
