@@ -84,6 +84,21 @@ function App() {
     }
   }
 
+  async function handleLogin() {
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+      if (error) {
+        setAccountError(error.message);
+        return;
+      }
+
+      setAccountError("");
+
+    } catch (err) {
+      setAccountError("Something went wrong.");
+    }
+  }
+
   return (
   <div className={styles.page}>
 
