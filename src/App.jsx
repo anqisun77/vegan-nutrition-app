@@ -99,6 +99,17 @@ function App() {
     }
   }
 
+  async function handleLogout() {
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) { 
+        setAccountError(error.message); 
+      }
+    } catch (err) { 
+      setAccountError("Something went wrong.");
+    }
+  }
+
   return (
   <div className={styles.page}>
 
@@ -127,6 +138,11 @@ function App() {
       type="password"
     />
     <button onClick={handleSignUp}>Sign Up</button>
+
+    <button onClick={handleLogin}>Log In</button>
+
+    <button onClick={handleLogout}></button>
+    
   </div>  
 
     {accountError && <p className={styles.errorMessage}>{accountError}</p>}
