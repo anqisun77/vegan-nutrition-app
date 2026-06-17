@@ -141,7 +141,7 @@ function App() {
 
     <button onClick={handleLogin}>Log In</button>
 
-    <button onClick={handleLogout}></button>
+    <button onClick={handleLogout}>Log Out</button>
     
   </div>  
 
