@@ -1,6 +1,6 @@
 import { supabase } from './supabaseClient';
 import styles from './App.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SearchBar from './components/SearchBar';
 import NutritionCard from './components/NutritionCard';
 
@@ -13,6 +13,7 @@ function App() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [accountError, setAccountError] = useState("");
+  const [user, setUser] = useState(null);
 
   function addToMeal(item) {
     setMealItems(prev => [...prev, item]);
@@ -110,6 +111,18 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    supabase.auth.getSession().then(({data: {session}}) => {
+      setUser(session?.user ?? null);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(session?.user ?? null);
+    });
+    
+    return () => subscription.unsubscribe();
+  }, []);
+
   return (
   <div className={styles.page}>
 
@@ -124,25 +137,30 @@ function App() {
     </p>
 
   <div>
-    <h2>Create Account</h2>
-    <input
-      value={email}
-      onChange={(e) => setEmail(e.target.value)}
-      placeholder="Enter Email"
-      type="email"
-    /> 
-    <input
-      value={password}
-      onChange={(e) => setPassword(e.target.value)}
-      placeholder="Enter Password"
-      type="password"
-    />
-    <button onClick={handleSignUp}>Sign Up</button>
-
-    <button onClick={handleLogin}>Log In</button>
-
-    <button onClick={handleLogout}>Log Out</button>
-    
+    {user ? (
+      <>
+        <p>Welcome, {user.email}</p>
+        <button onClick={handleLogout}>Log Out</button>
+      </>
+    ) : (
+      <>
+        <h2>Create Account</h2>
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter Email"
+          type="email"
+        /> 
+        <input
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Enter Password"
+          type="password"
+        />
+        <button onClick={handleSignUp}>Sign Up</button>
+        <button onClick={handleLogin}>Log In</button>
+      </>
+    )}
   </div>  
 
     {accountError && <p className={styles.errorMessage}>{accountError}</p>}
