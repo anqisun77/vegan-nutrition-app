@@ -88,6 +88,7 @@ function App() {
   async function handleLogin() {
     try {
       const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+      
       if (error) {
         setAccountError(error.message);
         return;
@@ -109,6 +110,47 @@ function App() {
     } catch (err) { 
       setAccountError("Something went wrong.");
     }
+  }
+
+  async function handleSaveMeal() {
+    try{
+      const { error } = await supabase
+        .from("saved_meals")
+        .insert({
+          user_id: user.id,
+          meal_data: mealItems
+      });
+
+      if (error) {
+        setAccountError(error.message);
+        return;
+      }
+
+      alert("Meal saved.");
+
+    } catch (err) {
+      setAccountError("Something went wrong.");
+    }
+  }
+
+  async function handleLoadMeals() {
+    try{
+        const { data, error } = await supabase
+             .from("saved_meals")
+             .select("*")
+             .eq("user_id", user.id)
+             .order("id", { ascending: false });
+
+        if (error) { 
+           setAccountError(error.message);
+           return;
+       }
+
+       setMealItems(data[0].meal_data);
+
+    } catch(err) {
+       setAccountError("Something went wrong.");
+     }
   }
 
   useEffect(() => {
@@ -140,7 +182,16 @@ function App() {
     {user ? (
       <>
         <p>Welcome, {user.email}</p>
+
         <button onClick={handleLogout}>Log Out</button>
+
+        {mealItems.length > 0 && (
+          <button onClick={handleSaveMeal}>Save Meal</button>
+        )}
+
+        {user && (
+          <button onClick={handleLoadMeals}>Load Meals</button>
+        )}
       </>
     ) : (
       <>
