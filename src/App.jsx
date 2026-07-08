@@ -107,6 +107,7 @@ function App() {
       if (error) { 
         setAccountError(error.message); 
       }
+      setMealItems([]);
     } catch (err) { 
       setAccountError("Something went wrong.");
     }
