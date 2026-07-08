@@ -1,0 +1,39 @@
+.div {     
+    display: flex;     
+    gap: 0px;     
+    align-items: center; 
+} 
+
+.button {     
+    padding: 10px 16px; 
+    border-radius: 0 8px 8px 0;     
+    border: none;     
+    background: #4CAF50;     
+    color: white;     
+    font-weight: bold;     
+    cursor: pointer; 
+} 
+
+.button:hover { 
+    background: #43a047; 
+}  
+
+.input {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid #ddd;
+    border-right: none;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.input:focus { 
+    border: 1px solid #4CAF50; 
+    box-shadow: 0 0 0 2px rgba(76,175,80,0.2); 
+}
+
+.input:active {     
+    transform: scale(0.97); 
+}
