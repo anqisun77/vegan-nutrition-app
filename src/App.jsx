@@ -218,7 +218,7 @@ function App() {
     {accountError && <p className={styles.errorMessage}>{accountError}</p>}
 
   <div className={styles.searchBox}>
-    <h2 className={styles.sctionHeading}>Search Ingredient</h2>
+    <h2 className={styles.sectionHeading}>Search Ingredient</h2>
 
     <SearchBar
       ingredient={ingredient}
