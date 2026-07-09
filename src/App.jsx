@@ -184,7 +184,7 @@ function App() {
       <>
         <p>Welcome, {user.email}</p>
 
-        <button onClick={handleLogout}>Log Out</button>
+        <button onClick={handleLogout} className={styles.button}>Log Out</button>
 
         {mealItems.length > 0 && (
           <button onClick={handleSaveMeal}>Save Meal</button>
@@ -209,8 +209,8 @@ function App() {
           placeholder="Enter Password"
           type="password"
         />
-        <button onClick={handleSignUp}>Sign Up</button>
-        <button onClick={handleLogin}>Log In</button>
+        <button onClick={handleSignUp} className={styles.button}>Sign Up</button>
+        <button onClick={handleLogin} className={styles.button}>Log In</button>
       </>
     )}
   </div>  

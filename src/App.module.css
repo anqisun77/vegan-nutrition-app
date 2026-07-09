@@ -35,6 +35,15 @@
   margin-bottom: 20px;
 }
 
+.button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 .sectionHeading { 
   margin-bottom: 20px;
 }
