@@ -1,9 +1,21 @@
 :root {
   color-scheme: light;
+
+  --color-bg-page: #fafafa;
+  --color-bg-card: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-muted: #666;
+  --color-border: #eee;
+  --color-primary: #4CAF50;
+  --color-primary-hover: #43a047;
+  --color-text-on-primary: white;
+  --color-error: #b00020;
+  --color-error-bg: #ffeaea;
+  --color-danger: #ff4d4f;
 }
 
 .page {
-  background: #fafafa;
+  background: var(--color-bg-page);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -15,7 +27,7 @@
   font-family: Arial, sans-serif;
   max-width: 900px;
   width: 100%;
-  color: #1a1a1a
+  color: var(--color-text);
 }
 
 .title { 
@@ -24,20 +36,20 @@
 }
 
 .subTitle { 
-  color: #666; 
+  color: var(--color-text-muted); 
   margin-bottom: 30px;
 }
 
 .searchBox {
   padding: 20px;
-  border: 1px solid #eee;
+  border: 1px solid var(--color-border);
   border-radius: 12px;
   margin-bottom: 20px;
 }
 
 .button {
-  background: #4CAF50;
-  color: white;
+  background: var(--color-primary);
+  color: var(--color-text-on-primary);
   border: none;
   padding: 10px 16px;
   border-radius: 8px;
@@ -49,8 +61,8 @@
 }
 
 .errorMessage {
-  color: #b00020;
-  background: #ffeaea;
+  color: var(--color-error);
+  background: var(--color-error-bg);
   padding: 10px;
   border-radius: 8px;
   margin-top: 10px;
@@ -65,9 +77,9 @@
   margin-top: 20px;
   padding: 20px;
   border-radius: 16px;
-  background: #ffffff;
+  background: var(--color-bg-card);
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-  border: 1px solid #eee;
+  border: 1px solid var(--color-border);
   max-width: 300px;
 }
 
@@ -94,7 +106,7 @@
   padding: 8px 12px;
   border-radius: 8px;
   border: none;
-  background: #ff4d4f;
-  color: white;
+  background: var(--color-danger);
+  color: var(--color-text-on-primary);
   cursor: pointer;
 }
