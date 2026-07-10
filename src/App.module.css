@@ -12,6 +12,13 @@
   --color-error: #b00020;
   --color-error-bg: #ffeaea;
   --color-danger: #ff4d4f;
+
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 20px;
+  --text-xl: 28px;
+  --text-2xl: 36px;
 }
 
 .page {
@@ -33,11 +40,13 @@
 .title { 
   margin-bottom: 10px; 
   text-align: center; 
+  font-size: var(--text-2xl);
 }
 
 .subTitle { 
   color: var(--color-text-muted); 
   margin-bottom: 30px;
+  font-size: var(--text-base);
 }
 
 .searchBox {
@@ -54,10 +63,12 @@
   padding: 10px 16px;
   border-radius: 8px;
   cursor: pointer;
+  font-size: var(--text-base);
 }
 
 .sectionHeading { 
   margin-bottom: 20px;
+  font-size: var(--text-xl);
 }
 
 .errorMessage {
@@ -66,11 +77,13 @@
   padding: 10px;
   border-radius: 8px;
   margin-top: 10px;
+  font-size: var(--text-sm);
 }
 
 .loadingMessage { 
   text-align: center;
   margin-top: 20px;
+  font-size: var(--text-sm);
 }
 
 .card {
@@ -89,6 +102,7 @@
   row-gap: 12px;
   column-gap: 12px;
   align-items: center;
+  font-size: var(--text-lg);
 }
 
 .mealBuilder { 
@@ -109,4 +123,15 @@
   background: var(--color-danger);
   color: var(--color-text-on-primary);
   cursor: pointer;
+  font-size: var(--text-base);
+}
+
+.itemName {
+  font-size: var(--text-lg);
+  margin-bottom: 8px;
+}
+
+.itemDetail {
+  font-size: var(--text-base);
+  margin: 4px 0;
 }
