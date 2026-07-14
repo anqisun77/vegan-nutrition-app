@@ -16,9 +16,9 @@
   --text-xs: 12px;
   --text-sm: 14px;
   --text-base: 16px;
-  --text-lg: 20px;
+  --text-lg: 23px;
   --text-xl: 28px;
-  --text-2xl: 36px;
+  --text-2xl: 55px;
 }
 
 .page {
@@ -46,7 +46,7 @@
 .subTitle { 
   color: var(--color-text-muted); 
   margin-bottom: 30px;
-  font-size: var(--text-base);
+  font-size: var(--text-lg);
 }
 
 .searchBox {
@@ -87,6 +87,7 @@
 }
 
 .card {
+  width: 300px;
   margin-top: 20px;
   padding: 20px;
   border-radius: 16px;
@@ -98,7 +99,7 @@
 
 .totalGrid {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 150px auto;
   row-gap: 12px;
   column-gap: 12px;
   align-items: center;
@@ -127,11 +128,11 @@
 }
 
 .itemName {
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   margin-bottom: 8px;
 }
 
 .itemDetail {
-  font-size: var(--text-base);
+  font-size: var(--text-lg);
   margin: 4px 0;
 }

@@ -296,12 +296,26 @@ function App() {
             >
               <h3 className={styles.itemName}>{item.name} (100g)</h3>
 
-              <p className={styles.itemDetail}>Calories: {getNutrient("Calories")} kcal</p>
-              <p className={styles.itemDetail}>Protein: {getNutrient("Protein")} g</p>
-              <p className={styles.itemDetail}>Carbs: {getNutrient("Carbohydrates")} g</p>
-              <p className={styles.itemDetail}>Fat: {getNutrient("Fat")} g</p>
-              <p className={styles.itemDetail}>Iron: {getNutrient("Iron")} mg</p>
-              <p className={styles.itemDetail}>Calcium: {getNutrient("Calcium")} mg</p>
+              <div className={styles.totalGrid}>
+                
+                <span>Calories</span>
+                <strong>{getNutrient("Calories")} kcal</strong>
+
+                <span>Protein</span>
+                <strong>{getNutrient("Protein")} g</strong>
+
+                <span>Carbs</span>
+                <strong>{getNutrient("Carbohydrates")} g</strong>
+
+                <span>Fat</span>
+                <strong>{getNutrient("Fat")} g</strong>
+
+                <span>Iron</span>
+                <strong>{getNutrient("Iron")} mg</strong>
+
+                <span>Calcium</span>
+                <strong>{getNutrient("Calcium")} mg</strong>
+              </div>
 
               <button 
                 onClick={() => removeFromMeal(index)}
