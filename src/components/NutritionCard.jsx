@@ -1,3 +1,5 @@
+import styles from '../App.module.css';
+
 function NutritionCard({ data, addToMeal }) {
     const nutrients = data.nutrition.nutrients;
 
@@ -13,73 +15,37 @@ function NutritionCard({ data, addToMeal }) {
     }
 
     return (
-        <div 
-            style={{
-                marginTop: "20px", 
-                border: "1px solid #ddd", 
-                borderRadius:"12px",
-                padding: "20px",
-                maxWidth: "300px",
-                boxShadow: "0 4px 10px rgba(0,0,0,0.05)"
-            }}
-        >
-            <h2 style={{ marginBottom: "15px" }}>
+        <div className={styles.card}>
+
+            <h2 className={styles.itemName}>
                 {data.name} (100g)
             </h2>
             
-            <div style={{ marginTop: "8px", display: "flex", justifyContent: "space-between" }}>
-                <span>Calorie</span>
-                <span>{getNutrient("Calories")} kcal</span>
-            </div>
+            <div className={styles.totalGrid}>
 
-            <div style={{ marginTop: "8px", display: "flex", justifyContent: "space-between" }}>
+                <span>Calorie</span>
+                <strong>{getNutrient("Calories")} kcal</strong>
+           
                 <span>Protein</span>
-                <span>{getNutrient("Protein")} g</span>
-            </div>
+                <strong>{getNutrient("Protein")} g</strong>
             
-            <div style={{ marginTop: "8px", display: "flex", justifyContent: "space-between" }}>
                 <span>Carbs</span>
-                <span>{getNutrient("Carbohydrates")} g</span>
-            </div>
+                <strong>{getNutrient("Carbohydrates")} g</strong>
             
-            <div style={{ marginTop: "8px", display: "flex", justifyContent: "space-between" }}>
                 <span>Fat</span>
-                <span>{getNutrient("Fat")} g</span>
-            </div>
+                <strong>{getNutrient("Fat")} g</strong>
             
-            <div style={{ marginTop: "8px", display: "flex", justifyContent: "space-between" }}>
                 <span>Iron</span>
-                <span>{getNutrient("Iron") || "N/A"} mg</span>
-            </div>                    
+                <strong>{getNutrient("Iron") || "N/A"} mg</strong>
             
-            <div style={{ marginTop: "8px", display: "flex", justifyContent: "space-between" }}>
                 <span>Calcium</span>
-                <span>{getNutrient("Calcium") || "N/A"} mg</span>
+                <strong>{getNutrient("Calcium") || "N/A"} mg</strong>
+
             </div>
 
             <button 
                 onClick={handleAdd}
-                style={{
-                    marginTop: "15px",
-                    padding: "10px 16px",
-                    borderRadius: "10px",
-                    border: "none",
-                    background: "#4CAF50",
-                    color: "white",
-                    fontWeight: "bold",
-                    fontSize: "14px",
-                    cursor: "pointer",
-                    boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
-                    transition: "all 0.2s ease"
-                }}
-                onMouseOver={(e) => {
-                    e.target.style.background = "#43a047";
-                    e.target.style.transform = "translateY(-1px)";
-                }}
-                onMouseOut={(e) => {
-                    e.target.style.background = "#4CAF50";
-                    e.target.style.transform = "translateY(0)";
-                }}
+                className={styles.button}
             >
                 Add to Meal
             </button>
