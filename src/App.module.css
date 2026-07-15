@@ -19,6 +19,14 @@
   --text-lg: 23px;
   --text-xl: 28px;
   --text-2xl: 55px;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-base: 16px;
+  --space-lg: 20px;
+  --space-xl: 30px;
+  --space-2xl: 40px;
 }
 
 .page {
@@ -30,7 +38,7 @@
 }
 
 .container { 
-  padding: 40px 20px;
+  padding: var(--space-2xl) var(--space-lg);
   font-family: Arial, sans-serif;
   max-width: 900px;
   width: 100%;
@@ -38,29 +46,29 @@
 }
 
 .title { 
-  margin-bottom: 10px; 
+  margin-bottom: var(--space-sm); 
   text-align: center; 
   font-size: var(--text-2xl);
 }
 
 .subTitle { 
   color: var(--color-text-muted); 
-  margin-bottom: 30px;
+  margin-bottom: var(--space-xl);
   font-size: var(--text-lg);
 }
 
 .searchBox {
-  padding: 20px;
+  padding: var(--space-lg);
   border: 1px solid var(--color-border);
   border-radius: 12px;
-  margin-bottom: 20px;
+  margin-bottom: var(--space-lg);
 }
 
 .button {
   background: var(--color-primary);
   color: var(--color-text-on-primary);
   border: none;
-  padding: 10px 16px;
+  padding: var(--space-sm) var(--space-base);
   border-radius: 8px;
   cursor: pointer;
   font-size: var(--text-base);
@@ -72,29 +80,29 @@
 }
 
 .sectionHeading { 
-  margin-bottom: 20px;
+  margin-bottom: var(--space-lg);
   font-size: var(--text-xl);
 }
 
 .errorMessage {
   color: var(--color-error);
   background: var(--color-error-bg);
-  padding: 10px;
+  padding: var(--space-sm);
   border-radius: 8px;
-  margin-top: 10px;
+  margin-top: var(--space-sm);
   font-size: var(--text-sm);
 }
 
 .loadingMessage { 
   text-align: center;
-  margin-top: 20px;
+  margin-top: var(--space-lg);
   font-size: var(--text-sm);
 }
 
 .card {
   width: 300px;
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: var(--space-lg);
+  padding: var(--space-lg);
   border-radius: 16px;
   background: var(--color-bg-card);
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
@@ -105,25 +113,25 @@
 .totalGrid {
   display: grid;
   grid-template-columns: 150px auto;
-  row-gap: 12px;
-  column-gap: 12px;
+  row-gap: var(--space-md);
+  column-gap: var(--space-md);
   align-items: center;
   font-size: var(--text-lg);
 }
 
 .mealBuilder { 
-  margin-top: 30px;
+  margin-top: var(--space-xl);
 }
 
 .mealList {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: var(--space-lg);
 }
 
 .removeButton { 
-  margin-top: 10px;
-  padding: 8px 12px;
+  margin-top: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
   border-radius: 8px;
   border: none;
   background: var(--color-danger);
@@ -134,10 +142,10 @@
 
 .itemName {
   font-size: var(--text-xl);
-  margin-bottom: 8px;
+  margin-bottom: var(--space-sm);
 }
 
 .itemDetail {
   font-size: var(--text-lg);
-  margin: 4px 0;
+  margin: var(--space-xs) 0;
 }
