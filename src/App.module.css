@@ -57,6 +57,12 @@
   font-size: var(--text-lg);
 }
 
+.emptyState {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+}
+
 .searchBox {
   padding: var(--space-lg);
   border: 1px solid var(--color-border);

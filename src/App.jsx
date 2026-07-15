@@ -233,6 +233,12 @@ function App() {
       </p>
     )}
 
+    {!nutrition && !isLoading && !error && (
+      <div className={styles.emptyState}>
+        <p>🔍 Search an ingredient above to see its nutrition facts.</p>
+      </div>
+    )}
+
     {nutrition && (
       <NutritionCard data={nutrition} addToMeal={addToMeal} />
     )}
