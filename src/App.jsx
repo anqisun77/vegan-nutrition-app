@@ -245,6 +245,7 @@ function App() {
 
     {isLoading && (
       <p className={styles.loadingMessage}>
+        <span className={styles.spinner}></span>
         Loading nutrition data...
       </p>
     )}
