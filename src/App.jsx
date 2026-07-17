@@ -179,7 +179,7 @@ function App() {
       Build smarter meals and track essential nutrients with ease.
     </p>
 
-  <div>
+  <div className={styles.accountBox}>
     {user ? (
       <>
         <p>Welcome, {user.email}</p>
