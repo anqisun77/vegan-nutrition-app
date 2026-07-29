@@ -59,7 +59,6 @@ function App() {
 
       const infoData = await infoRes.json();
         
-      console.log(infoData);
       setNutrition(infoData);
       setIsLoading(false);
       
