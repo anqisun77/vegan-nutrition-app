@@ -104,9 +104,11 @@ function App() {
     try {
       const { error } = await supabase.auth.signOut();
       if (error) { 
-        setAccountError(error.message); 
+        setAccountError(error.message)
+        return;
       }
       setMealItems([]);
+
     } catch (err) { 
       setAccountError("Something went wrong.");
     }
@@ -145,6 +147,11 @@ function App() {
            setAccountError(error.message);
            return;
        }
+
+        if(data.length === 0) {
+          setAccountError("No saved meals");
+          return;
+        }
 
        setMealItems(data[0].meal_data);
 
@@ -189,9 +196,7 @@ function App() {
           <button onClick={handleSaveMeal}>Save Meal</button>
         )}
 
-        {user && (
-          <button onClick={handleLoadMeals}>Load Meals</button>
-        )}
+        <button onClick={handleLoadMeals}>Load Meals</button>
       </>
     ) : (
       <>
