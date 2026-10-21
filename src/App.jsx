@@ -111,6 +111,9 @@ function App() {
       setError("");
       setNutrition(null);
       setAccountError("");
+      setIngredient("");
+      setEmail("");
+      setPassword("");
 
     } catch (err) { 
       setAccountError("Something went wrong.");
