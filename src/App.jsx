@@ -108,6 +108,9 @@ function App() {
         return;
       }
       setMealItems([]);
+      setError("");
+      setNutrition(null);
+      setAccountError("");
 
     } catch (err) { 
       setAccountError("Something went wrong.");
