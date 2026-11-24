@@ -14,6 +14,8 @@ function App() {
   const [password, setPassword] = useState("");
   const [accountError, setAccountError] = useState("");
   const [user, setUser] = useState(null);
+  const [amount, setAmount] = useState(100);
+  const [unit, setUnit] = useState("grams");
 
   function addToMeal(item) {
     setMealItems(prev => [...prev, item]);
@@ -53,7 +55,7 @@ function App() {
       const ingredientId = searchData.results[0].id;
 
       const infoRes = await fetch(
-        `https://api.spoonacular.com/food/ingredients/${ingredientId}/information?amount=100&unit=grams&apiKey=${import.meta.env.VITE_API_KEY}`
+        `https://api.spoonacular.com/food/ingredients/${ingredientId}/information?amount=${amount}&unit=${unit}&apiKey=${import.meta.env.VITE_API_KEY}`
       );
 
       const infoData = await infoRes.json();
@@ -234,6 +236,21 @@ function App() {
       setIngredient={setIngredient}
       handleSearch={handleSearch}
     />
+
+    <input
+      value={amount}
+      onChange={(e) => setAmount(e.target.value)}
+      placeholder="Amount"
+      type="number"
+      min="1"
+    /> 
+
+    <select value={unit} onChange={(e) => setUnit(e.target.value)}>
+      <option value="grams">grams</option>
+      <option value="oz">ounces</option>
+      <option value="cup">cup</option>
+      <option value="piece">piece</option>
+    </select>
   </div>
 
     {error && (
