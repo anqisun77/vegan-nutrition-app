@@ -23,7 +23,7 @@ function NutritionCard({ data, addToMeal }) {
             
             <div className={styles.totalGrid}>
 
-                <span>Calorie</span>
+                <span>Calories</span>
                 <strong>{getNutrient("Calories")} kcal</strong>
            
                 <span>Protein</span>
