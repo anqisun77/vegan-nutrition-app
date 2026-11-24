@@ -47,7 +47,6 @@ function App() {
 
       if(!searchData.results || searchData.results.length === 0) {
         setError("No ingredient found");
-        setIsLoading(false);
         return;
       }
 
@@ -60,10 +59,10 @@ function App() {
       const infoData = await infoRes.json();
         
       setNutrition(infoData);
-      setIsLoading(false);
       
     } catch (err) {
       setError("Something went wrong");
+    } finally {
       setIsLoading(false);
     }
   }
